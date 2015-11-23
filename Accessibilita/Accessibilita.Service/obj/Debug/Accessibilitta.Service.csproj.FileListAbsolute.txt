@@ -1,0 +1,11 @@
+C:\Projetos\Accessibilita\Accessibilita.Service\bin\Debug\Accessibilita.Service.dll
+C:\Projetos\Accessibilita\Accessibilita.Service\bin\Debug\Accessibilita.Service.pdb
+C:\Projetos\Accessibilita\Accessibilita.Service\bin\Debug\Accessibilita.Data.dll
+C:\Projetos\Accessibilita\Accessibilita.Service\bin\Debug\Accessibilita.Data.Entities.dll
+C:\Projetos\Accessibilita\Accessibilita.Service\bin\Debug\EntityFramework.dll
+C:\Projetos\Accessibilita\Accessibilita.Service\bin\Debug\Accessibilita.Data.Entities.pdb
+C:\Projetos\Accessibilita\Accessibilita.Service\bin\Debug\Accessibilita.Data.pdb
+C:\Projetos\Accessibilita\Accessibilita.Service\bin\Debug\EntityFramework.xml
+C:\Projetos\Accessibilita\Accessibilita.Service\obj\Debug\Accessibilitta.Service.csprojResolveAssemblyReference.cache
+C:\Projetos\Accessibilita\Accessibilita.Service\obj\Debug\Accessibilita.Service.dll
+C:\Projetos\Accessibilita\Accessibilita.Service\obj\Debug\Accessibilita.Service.pdb

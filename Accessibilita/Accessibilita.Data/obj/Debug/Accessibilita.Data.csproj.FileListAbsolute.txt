@@ -1,0 +1,35 @@
+C:\Users\Bruno\Documents\Visual Studio 2015\Projects\Accessibilita\Accessibilita.Database.Repository\obj\Debug\Accessibilita.Data.csprojResolveAssemblyReference.cache
+C:\Users\Bruno\Documents\Visual Studio 2015\Projects\Accessibilita\Accessibilita.Database.Repository\bin\Debug\Accessibilita.Data.Entities.dll
+C:\Users\Bruno\Documents\Visual Studio 2015\Projects\Accessibilita\Accessibilita.Database.Repository\bin\Debug\EntityFramework.dll
+C:\Users\Bruno\Documents\Visual Studio 2015\Projects\Accessibilita\Accessibilita.Database.Repository\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Bruno\Documents\Visual Studio 2015\Projects\Accessibilita\Accessibilita.Database.Repository\bin\Debug\Accessibilita.Data.Entities.pdb
+C:\Users\Bruno\Documents\Visual Studio 2015\Projects\Accessibilita\Accessibilita.Database.Repository\bin\Debug\EntityFramework.xml
+C:\Users\Bruno\Documents\Visual Studio 2015\Projects\Accessibilita\Accessibilita.Database.Repository\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Bruno\Documents\Visual Studio 2015\Projects\Accessibilita\Accessibilita.Database.Repository\bin\Debug\Accessibilita.Data.dll.config
+C:\Users\Bruno\Documents\Visual Studio 2015\Projects\Accessibilita\Accessibilita.Database.Repository\bin\Debug\Accessibilita.Data.dll
+C:\Users\Bruno\Documents\Visual Studio 2015\Projects\Accessibilita\Accessibilita.Database.Repository\bin\Debug\Accessibilita.Data.pdb
+C:\Users\Bruno\Documents\Visual Studio 2015\Projects\Accessibilita\Accessibilita.Database.Repository\obj\Debug\Accessibilita.Data.dll
+C:\Users\Bruno\Documents\Visual Studio 2015\Projects\Accessibilita\Accessibilita.Database.Repository\obj\Debug\Accessibilita.Data.pdb
+C:\Projetos\Accessibilita\Accessibilita.Data\bin\Debug\Accessibilita.Data.dll.config
+C:\Projetos\Accessibilita\Accessibilita.Data\bin\Debug\Accessibilita.Data.dll
+C:\Projetos\Accessibilita\Accessibilita.Data\bin\Debug\Accessibilita.Data.pdb
+C:\Projetos\Accessibilita\Accessibilita.Data\bin\Debug\Accessibilita.Data.Entities.dll
+C:\Projetos\Accessibilita\Accessibilita.Data\bin\Debug\EntityFramework.dll
+C:\Projetos\Accessibilita\Accessibilita.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Projetos\Accessibilita\Accessibilita.Data\bin\Debug\Mono.Security.dll
+C:\Projetos\Accessibilita\Accessibilita.Data\bin\Debug\Npgsql.dll
+C:\Projetos\Accessibilita\Accessibilita.Data\bin\Debug\Npgsql.EntityFramework.dll
+C:\Projetos\Accessibilita\Accessibilita.Data\bin\Debug\Accessibilita.Data.Entities.pdb
+C:\Projetos\Accessibilita\Accessibilita.Data\bin\Debug\EntityFramework.xml
+C:\Projetos\Accessibilita\Accessibilita.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Projetos\Accessibilita\Accessibilita.Data\bin\Debug\Npgsql.xml
+C:\Projetos\Accessibilita\Accessibilita.Data\bin\Debug\Npgsql.EntityFramework.xml
+C:\Projetos\Accessibilita\Accessibilita.Data\bin\Debug\de\Npgsql.resources.dll
+C:\Projetos\Accessibilita\Accessibilita.Data\bin\Debug\es\Npgsql.resources.dll
+C:\Projetos\Accessibilita\Accessibilita.Data\bin\Debug\fi\Npgsql.resources.dll
+C:\Projetos\Accessibilita\Accessibilita.Data\bin\Debug\fr\Npgsql.resources.dll
+C:\Projetos\Accessibilita\Accessibilita.Data\bin\Debug\ja\Npgsql.resources.dll
+C:\Projetos\Accessibilita\Accessibilita.Data\bin\Debug\zh-CN\Npgsql.resources.dll
+C:\Projetos\Accessibilita\Accessibilita.Data\obj\Debug\Accessibilita.Data.csprojResolveAssemblyReference.cache
+C:\Projetos\Accessibilita\Accessibilita.Data\obj\Debug\Accessibilita.Data.dll
+C:\Projetos\Accessibilita\Accessibilita.Data\obj\Debug\Accessibilita.Data.pdb
