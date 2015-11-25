@@ -1,7 +1,0 @@
-C:\Users\Bruno\Documents\Visual Studio 2015\Projects\Accessibilita\Accessibilita.Database.Repository\bin\Debug\Accessibilita.Database.Repository.dll
-C:\Users\Bruno\Documents\Visual Studio 2015\Projects\Accessibilita\Accessibilita.Database.Repository\bin\Debug\Accessibilita.Database.Repository.pdb
-C:\Users\Bruno\Documents\Visual Studio 2015\Projects\Accessibilita\Accessibilita.Database.Repository\bin\Debug\Accessibilita.Data.Entities.dll
-C:\Users\Bruno\Documents\Visual Studio 2015\Projects\Accessibilita\Accessibilita.Database.Repository\bin\Debug\Accessibilita.Data.Entities.pdb
-C:\Users\Bruno\Documents\Visual Studio 2015\Projects\Accessibilita\Accessibilita.Database.Repository\obj\Debug\Accessibilita.Data.Repository.csprojResolveAssemblyReference.cache
-C:\Users\Bruno\Documents\Visual Studio 2015\Projects\Accessibilita\Accessibilita.Database.Repository\obj\Debug\Accessibilita.Database.Repository.dll
-C:\Users\Bruno\Documents\Visual Studio 2015\Projects\Accessibilita\Accessibilita.Database.Repository\obj\Debug\Accessibilita.Database.Repository.pdb
