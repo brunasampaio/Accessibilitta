@@ -11,10 +11,10 @@ using System.Net.Http.Headers;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
-using Accessibilitta.Web.Api.Sample.Areas.HelpPage.ModelDescriptions;
-using Accessibilitta.Web.Api.Sample.Areas.HelpPage.Models;
+using Accessibilita.Web.Api.Sample.Areas.HelpPage.ModelDescriptions;
+using Accessibilita.Web.Api.Sample.Areas.HelpPage.Models;
 
-namespace Accessibilitta.Web.Api.Sample.Areas.HelpPage
+namespace Accessibilita.Web.Api.Sample.Areas.HelpPage
 {
     public static class HelpPageConfigurationExtensions
     {

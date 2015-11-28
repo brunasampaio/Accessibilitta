@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Accessibilitta.Web.Api.Sample.Controllers
+namespace Accessibilita.Web.Api.Sample.Controllers
 {
     public class HomeController : Controller
     {

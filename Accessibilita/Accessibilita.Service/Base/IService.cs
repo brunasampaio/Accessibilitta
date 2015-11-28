@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Accessibilitta.Service.Base
+namespace Accessibilita.Service.Base
 {
     public interface IService<TEntity> where TEntity : class
     {

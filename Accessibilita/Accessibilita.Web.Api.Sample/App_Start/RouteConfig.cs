@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace Accessibilitta.Web.Api.Sample
+namespace Accessibilita.Web.Api.Sample
 {
     public class RouteConfig
     {

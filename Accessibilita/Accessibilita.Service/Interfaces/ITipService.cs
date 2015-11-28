@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Accessibilitta.Data.Entities;
-using Accessibilitta.Service.Base;
+using Accessibilita.Data.Entities;
+using Accessibilita.Service.Base;
 
-namespace Accessibilitta.Service.Interfaces
+namespace Accessibilita.Service.Interfaces
 {
     public interface ITipService : IService<Tip>, IDisposable
     {

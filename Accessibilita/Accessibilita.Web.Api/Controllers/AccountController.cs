@@ -1,10 +1,10 @@
 ﻿using System.Web.Http;
 using System.Linq;
-using Accessibilitta.Service;
-using Accessibilitta.Service.Interfaces;
-using Accessibilitta.Data.Entities;
+using Accessibilita.Service;
+using Accessibilita.Service.Interfaces;
+using Accessibilita.Data.Entities;
 
-namespace Accessibilitta.Web.Api.Controllers
+namespace Accessibilita.Web.Api.Controllers
 {
     public class AccountController : ApiController
     {
@@ -22,12 +22,6 @@ namespace Accessibilitta.Web.Api.Controllers
         {
             var teste = _accountService.GetAll();
             return teste.ToArray();
-        }
-
-        [HttpGet]
-        public bool Login(string email, string password)
-        {
-            return true;
         }
     }
 }

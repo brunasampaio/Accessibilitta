@@ -5,13 +5,13 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Accessibilitta.Data.Entities;
+using Accessibilita.Data.Entities;
 
-namespace Accessibilitta.Data.Context
+namespace Accessibilita.Data.Context
 {
-    public class AccessibilittaContext : DbContext
+    public class AccessibilitaContext : DbContext
     {
-        public AccessibilittaContext() : base("AccessibilittaDB")
+        public AccessibilitaContext() : base("AccessibilitaDB")
         {
 
         }

@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Net.Http.Headers;
 using System.Web.Http.Description;
-using Accessibilitta.Web.Api.Sample.Areas.HelpPage.ModelDescriptions;
+using Accessibilita.Web.Api.Sample.Areas.HelpPage.ModelDescriptions;
 
-namespace Accessibilitta.Web.Api.Sample.Areas.HelpPage.Models
+namespace Accessibilita.Web.Api.Sample.Areas.HelpPage.Models
 {
     /// <summary>
     /// The model that represents an API displayed on the help page.

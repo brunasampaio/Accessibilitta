@@ -1,10 +1,10 @@
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
-using Accessibilitta.Web.Api.Sample.Areas.HelpPage.ModelDescriptions;
-using Accessibilitta.Web.Api.Sample.Areas.HelpPage.Models;
+using Accessibilita.Web.Api.Sample.Areas.HelpPage.ModelDescriptions;
+using Accessibilita.Web.Api.Sample.Areas.HelpPage.Models;
 
-namespace Accessibilitta.Web.Api.Sample.Areas.HelpPage.Controllers
+namespace Accessibilita.Web.Api.Sample.Areas.HelpPage.Controllers
 {
     /// <summary>
     /// The controller that will handle requests for the help page.

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.ComponentModel;
 
 
-namespace Accessibilitta.Data.Entities
+namespace Accessibilita.Data.Entities
 {
     public class Place
     {

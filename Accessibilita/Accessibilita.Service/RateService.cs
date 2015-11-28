@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Accessibilitta.Data.Entities;
-using Accessibilitta.Data.Repositories;
-using Accessibilitta.Data.Repositories.Interfaces;
-using Accessibilitta.Service.Base;
-using Accessibilitta.Service.Interfaces;
+using Accessibilita.Data.Entities;
+using Accessibilita.Data.Repositories;
+using Accessibilita.Data.Repositories.Interfaces;
+using Accessibilita.Service.Base;
+using Accessibilita.Service.Interfaces;
 
-namespace Accessibilitta.Service
+namespace Accessibilita.Service
 {
     public class RateService : Service<Rate>, IRateService
     {

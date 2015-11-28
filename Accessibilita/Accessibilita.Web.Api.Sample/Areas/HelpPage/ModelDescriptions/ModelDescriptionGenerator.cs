@@ -11,7 +11,7 @@ using System.Web.Http.Description;
 using System.Xml.Serialization;
 using Newtonsoft.Json;
 
-namespace Accessibilitta.Web.Api.Sample.Areas.HelpPage.ModelDescriptions
+namespace Accessibilita.Web.Api.Sample.Areas.HelpPage.ModelDescriptions
 {
     /// <summary>
     /// Generates model descriptions for given types.

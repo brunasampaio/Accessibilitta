@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 
-namespace Accessibilitta.Web.Api.Sample
+namespace Accessibilita.Web.Api.Sample
 {
     public static class WebApiConfig
     {

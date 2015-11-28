@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Accessibilitta.Data.Repositories.Base
+namespace Accessibilita.Data.Repositories.Base
 {
     public interface IRepository<TEntity> where TEntity : class
     {

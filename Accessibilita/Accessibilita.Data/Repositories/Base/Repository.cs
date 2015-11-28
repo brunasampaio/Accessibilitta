@@ -4,16 +4,16 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Accessibilitta.Data.Context;
+using Accessibilita.Data.Context;
 
-namespace Accessibilitta.Data.Repositories.Base
+namespace Accessibilita.Data.Repositories.Base
 {
     public class Repository<TEntity> : IDisposable, IRepository<TEntity> where TEntity : class
     {
 
-        private AccessibilittaContext _context;
+        private AccessibilitaContext _context;
 
-        public Repository(AccessibilittaContext context)
+        public Repository(AccessibilitaContext context)
         {
             if (context == null)
                 throw new ArgumentNullException("Context");

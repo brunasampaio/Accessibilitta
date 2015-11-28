@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 
-namespace Accessibilitta.Web.Api
+namespace Accessibilita.Web.Api
 {
     public static class WebApiConfig
     {
@@ -16,7 +16,7 @@ namespace Accessibilitta.Web.Api
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
-                routeTemplate: "api/{controller}/{action}/{id}",
+                routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
         }

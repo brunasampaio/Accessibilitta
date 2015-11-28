@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Accessibilitta.Data.Context;
-using Accessibilitta.Data.Entities;
-using Accessibilitta.Data.Repositories.Base;
-using Accessibilitta.Data.Repositories.Interfaces;
+using Accessibilita.Data.Context;
+using Accessibilita.Data.Entities;
+using Accessibilita.Data.Repositories.Base;
+using Accessibilita.Data.Repositories.Interfaces;
 
-namespace Accessibilitta.Data.Repositories
+namespace Accessibilita.Data.Repositories
 {
     public class RateRepository : Repository<Rate>, IRateRepository
     {
-        public RateRepository(AccessibilittaContext context) : base(context) { }
+        public RateRepository(AccessibilitaContext context) : base(context) { }
     }
 }

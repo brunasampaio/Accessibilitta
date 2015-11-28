@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Linq;
 using System.Reflection;
 
-namespace Accessibilitta.Web.Api.Sample.Areas.HelpPage.ModelDescriptions
+namespace Accessibilita.Web.Api.Sample.Areas.HelpPage.ModelDescriptions
 {
     internal static class ModelNameHelper
     {

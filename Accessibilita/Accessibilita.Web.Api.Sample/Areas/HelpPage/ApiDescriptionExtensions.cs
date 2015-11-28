@@ -3,7 +3,7 @@ using System.Text;
 using System.Web;
 using System.Web.Http.Description;
 
-namespace Accessibilitta.Web.Api.Sample.Areas.HelpPage
+namespace Accessibilita.Web.Api.Sample.Areas.HelpPage
 {
     public static class ApiDescriptionExtensions
     {

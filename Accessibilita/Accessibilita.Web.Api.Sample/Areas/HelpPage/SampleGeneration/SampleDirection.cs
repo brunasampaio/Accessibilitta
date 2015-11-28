@@ -1,4 +1,4 @@
-namespace Accessibilitta.Web.Api.Sample.Areas.HelpPage
+namespace Accessibilita.Web.Api.Sample.Areas.HelpPage
 {
     /// <summary>
     /// Indicates whether the sample is used for request or response

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Accessibilitta.Data.Entities
+namespace Accessibilita.Data.Entities
 {
     public class Rate
     {

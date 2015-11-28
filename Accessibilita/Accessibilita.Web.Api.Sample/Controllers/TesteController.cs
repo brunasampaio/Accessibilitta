@@ -5,7 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace Accessibilitta.Web.Api.Sample.Controllers
+namespace Accessibilita.Web.Api.Sample.Controllers
 {
     public class TesteController : ApiController
     {
