@@ -45,6 +45,7 @@
     <Compile Include="Place.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rate.cs" />
+    <Compile Include="RateType.cs" />
     <Compile Include="Tip.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

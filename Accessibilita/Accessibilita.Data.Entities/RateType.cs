@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace Accessibilita.Data.Entities
 {
-    public class Rate
+    public class RateType
     {
         public int Id { get; set; }
-        public int Rating { get; set; }
-        public Account User { get; set; }
-        public Place Place { get; set; }
-        public RateType Type { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
     }
 }

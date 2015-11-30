@@ -14,7 +14,7 @@ namespace Accessibilita.Data.Entities
         public string Name { get; set; }
         public string Description { get; set; }
         public string Latitude { get; set; }
-        public string Longitude { get; set; }        
-        public List<Tip> Tips { get; set; }
+        public string Longitude { get; set; }
+        public List<Rate> Tips { get; set; }
     }
 }
