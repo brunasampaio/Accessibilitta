@@ -40,13 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="TipService.cs" />
+    <Compile Include="Interfaces\IRateTypeService.cs" />
+    <Compile Include="RateTypeService.cs" />
     <Compile Include="RateService.cs" />
     <Compile Include="PlaceService.cs" />
     <Compile Include="AccountService.cs" />
     <Compile Include="Base\IService.cs" />
     <Compile Include="Base\Service.cs" />
-    <Compile Include="Interfaces\ITipService.cs" />
     <Compile Include="Interfaces\IRateService.cs" />
     <Compile Include="Interfaces\IPlaceService.cs" />
     <Compile Include="Interfaces\IAccountService.cs" />

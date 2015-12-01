@@ -71,10 +71,10 @@
     <Compile Include="Repositories\Interfaces\IAccountRepository.cs" />
     <Compile Include="Repositories\Interfaces\IPlaceRepository.cs" />
     <Compile Include="Repositories\Interfaces\IRateRepository.cs" />
-    <Compile Include="Repositories\Interfaces\ITipRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IRateTypeRepository.cs" />
     <Compile Include="Repositories\PlaceRepository.cs" />
     <Compile Include="Repositories\RateRepository.cs" />
-    <Compile Include="Repositories\TipRepository.cs" />
+    <Compile Include="Repositories\RateTypeRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Accessibilita.Data.Entities\Accessibilita.Data.Entities.csproj">

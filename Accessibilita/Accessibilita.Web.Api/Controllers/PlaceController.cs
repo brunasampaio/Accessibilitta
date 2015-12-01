@@ -27,6 +27,19 @@ namespace Accessibilita.Web.Api.Controllers
             _FSClient = new SharpSquare(ConfigurationManager.AppSettings["FourSquareClientId"], ConfigurationManager.AppSettings["FourSquareClientSecret"]);
         }
 
+        [HttpPost]
+        public Result<bool> RatePlace(int placeId)
+        {
+            return this.GetResult(true);
+        }
+
+        [HttpGet]
+        public Result<Rate[]> GetRatingPlace(int id)
+        {            
+            Place place = _placeService.GetById(id);
+            return this.GetResult(place.Rates.ToArray());
+        }
+
         [HttpGet]
         public Result<Place[]> SearchPlace(string lat, string lng, string query)
         {
@@ -46,8 +59,6 @@ namespace Accessibilita.Web.Api.Controllers
                     Longitude = venue.location.lng.ToString()
                 });
             }
-
-            this._placeService.GetAll().ToList();
 
             return this.GetResult(result.ToArray());
         }

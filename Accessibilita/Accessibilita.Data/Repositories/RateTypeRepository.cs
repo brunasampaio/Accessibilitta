@@ -10,9 +10,8 @@ using Accessibilita.Data.Repositories.Interfaces;
 
 namespace Accessibilita.Data.Repositories
 {
-    public class TipRepository : Repository<Tip>, ITipRepository
+    public class RateTypeRepository : Repository<RateType>, IRateTypeRepository
     {
-        public TipRepository(AccessibilitaContext context) : base(context) { }
-
+        public RateTypeRepository(AccessibilitaContext context) : base(context) { }
     }
 }

@@ -11,12 +11,12 @@ using Accessibilita.Service.Interfaces;
 
 namespace Accessibilita.Service
 {
-    public class TipService : Service<Tip>, ITipService
+    public class RateTypeService : Service<RateType>, IRateTypeService
     {
-        private ITipRepository _repository;
-        public TipService()
+        private IRateTypeRepository _repository;
+        public RateTypeService()
         {
-            _repository = new TipRepository(_context);
+            _repository = new RateTypeRepository(_context);
         }
     }
 }

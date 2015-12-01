@@ -16,15 +16,17 @@ namespace Accessibilita.Data.Context
 
         }
 
-
-
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Account>().ToTable("tb_account", "application");
             modelBuilder.Entity<Place>().ToTable("tb_place", "application");
-            modelBuilder.Entity<Tip>().ToTable("tb_tip", "application");
             modelBuilder.Entity<Rate>().ToTable("tb_rate", "application");
             modelBuilder.Entity<RateType>().ToTable("tb_rate_type", "application");
         }
+
+        public DbSet<Account> Accounts { get; set; }
+        public DbSet<Place> Places { get; set; }
+        public DbSet<Rate> Rates { get; set; }
+        public DbSet<RateType> RateTypes { get; set; }
     }
 }

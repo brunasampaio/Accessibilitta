@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Accessibilita.Data.Entities;
-using Accessibilita.Data.Repositories.Base;
+using Accessibilita.Service.Base;
 
-namespace Accessibilita.Data.Repositories.Interfaces
+namespace Accessibilita.Service.Interfaces
 {
-    public interface ITipRepository : IRepository<Tip>, IDisposable
+    public interface IRateTypeService : IService<RateType>, IDisposable
     {
     }
 }

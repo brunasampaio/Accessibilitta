@@ -4,6 +4,7 @@ namespace Accessibilita.Data.Migrations
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using Entities;
 
     internal sealed class Configuration : DbMigrationsConfiguration<Accessibilita.Data.Context.AccessibilitaContext>
     {
@@ -27,6 +28,10 @@ namespace Accessibilita.Data.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+            context.RateTypes.Add(new RateType() { Name = "Orientação Espacial" });
+            context.RateTypes.Add(new RateType() { Name = "Comunicação" });
+            context.RateTypes.Add(new RateType() { Name = "Deslocamento" });
+            context.RateTypes.Add(new RateType() { Name = "Uso" });
         }
     }
 }
