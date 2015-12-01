@@ -9,12 +9,14 @@ using System.Web.Http.Results;
 using Accessibilita.Data.Entities;
 using Accessibilita.Service;
 using Accessibilita.Service.Interfaces;
+using Accessibilita.Web.Api.Models;
+using Accessibilita.Web.Api.Controllers.Base;
 using FourSquare.SharpSquare.Core;
 using FourSquare.SharpSquare.Entities;
 
 namespace Accessibilita.Web.Api.Controllers
 {
-    public class PlaceController : ApiController
+    public class PlaceController : BaseController
     {
         IPlaceService _placeService;
         SharpSquare _FSClient;
@@ -26,13 +28,14 @@ namespace Accessibilita.Web.Api.Controllers
         }
 
         [HttpGet]
-        public JsonResult<List<Place>> SearchPlace(string latitude, string longitude, string query)
+        public Result<Place[]> SearchPlace(string lat, string lng, string query)
         {
             List<Place> result = new List<Place>();
             List<Venue> apiResult = _FSClient.SearchVenues(new Dictionary<string, string>() {
-                { "ll", string.Format("{0},{1}", latitude, longitude) },
+                { "ll", string.Format("{0},{1}", lat, lng) },
                 { "query", query}
             });
+
             foreach (var venue in apiResult)
             {
                 result.Add(new Place()
@@ -43,7 +46,10 @@ namespace Accessibilita.Web.Api.Controllers
                     Longitude = venue.location.lng.ToString()
                 });
             }
-            return Json(result);
+
+            this._placeService.GetAll().ToList();
+
+            return this.GetResult(result.ToArray());
         }
     }
 }
