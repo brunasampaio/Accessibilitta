@@ -10,6 +10,6 @@ namespace Accessibilita.Service.Interfaces
 {
     public interface IAccountService : IService<Account>, IDisposable
     {
-
+        Account Authenticate(string userName, string password);
     }
 }

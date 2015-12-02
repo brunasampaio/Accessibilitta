@@ -32,6 +32,8 @@ namespace Accessibilita.Data.Migrations
             context.RateTypes.Add(new RateType() { Name = "Comunicação" });
             context.RateTypes.Add(new RateType() { Name = "Deslocamento" });
             context.RateTypes.Add(new RateType() { Name = "Uso" });
+
+            context.Accounts.Add(new Account() { Email = "teste@teste.com.br", Name = "Teste", LastName = "Teste", Password = "Teste123", Phone = "12345678" });
         }
     }
 }

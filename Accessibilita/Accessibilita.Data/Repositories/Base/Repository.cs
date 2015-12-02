@@ -30,6 +30,11 @@ namespace Accessibilita.Data.Repositories.Base
             return _context.Set<TEntity>().Find(id);
         }
 
+        public IQueryable<TEntity> Get(Func<TEntity, bool> predicate)
+        {
+            return _context.Set<TEntity>().Where(predicate).AsQueryable();
+        }
+
         public void Insert(TEntity obj)
         {
             _context.Set<TEntity>().Add(obj);

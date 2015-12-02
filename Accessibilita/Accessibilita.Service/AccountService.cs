@@ -19,5 +19,10 @@ namespace Accessibilita.Service
         {
             _repository = new AccountRepository(_context);
         }
+
+        public Account Authenticate(string userName, string password)
+        {
+            return _repository.Get(a => a.Email == userName && a.Password == password).FirstOrDefault();
+        }
     }
 }

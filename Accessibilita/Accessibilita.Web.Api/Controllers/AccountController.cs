@@ -17,6 +17,7 @@ namespace Accessibilita.Web.Api.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public Account[] Teste()
         {
             var teste = _accountService.GetAll();
