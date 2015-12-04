@@ -21,7 +21,8 @@ namespace Accessibilita.Web.Api.Controllers
             _service = new RateTypeService();
         }
 
-        [HttpGet]
+        [Authorize]
+        [HttpGet]        
         public Result<RateType[]> GetRateTypes()
         {
             return this.GetResult(_service.GetAll().ToArray());

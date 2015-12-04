@@ -18,5 +18,11 @@ namespace Accessibilita.Service
         {
             _repository = new RateRepository(_context);
         }
+
+        public Rate[] RatesByPlace(int placeId)
+        {
+            //TODO:
+            return null;///_repository.Get(r => r.Place.Id == placeId);
+        }
     }
 }

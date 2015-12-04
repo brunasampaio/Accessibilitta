@@ -21,7 +21,7 @@ namespace Accessibilita.Data.Context
             modelBuilder.Entity<Account>().ToTable("tb_account", "application");
             modelBuilder.Entity<Place>().ToTable("tb_place", "application");
             modelBuilder.Entity<Rate>().ToTable("tb_rate", "application");
-            modelBuilder.Entity<RateType>().ToTable("tb_rate_type", "application");
+            modelBuilder.Entity<RateType>().ToTable("tb_rate_type", "application");           
         }
 
         public DbSet<Account> Accounts { get; set; }

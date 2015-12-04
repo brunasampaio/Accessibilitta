@@ -13,31 +13,38 @@ namespace Accessibilita.Web.Api.Security
 {
     public class AuthorizationServerProvider : OAuthAuthorizationServerProvider
     {
-        public override async Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
+        public override Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
         {
+            
             context.Validated();
+            return Task.FromResult<object>(null);
         }
 
-        public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
+        public override Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
 
             context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
-
             using (IAccountService service = new AccountService())
             {
                 Account user = service.Authenticate(context.UserName, context.Password);
-                if (user == null)
+                if (user != null)
+                {
+                    
+
+                    var identity = new ClaimsIdentity(context.Options.AuthenticationType);
+                    identity.AddClaim(new Claim("sub", context.UserName));
+                    identity.AddClaim(new Claim("role", "user"));
+                    context.Validated(identity);
+                    return Task.FromResult<object>(null);
+                }
+                else
                 {
                     context.SetError("invalid_grant", "The user name or password is incorrect.");
-                    return;
+                    return Task.FromResult<object>(null);
                 }
             }
-            
-            var identity = new ClaimsIdentity(context.Options.AuthenticationType);
-            identity.AddClaim(new Claim("sub", context.UserName));
-            identity.AddClaim(new Claim("role", "user"));
 
-            context.Validated(identity);
+
         }
     }
 }

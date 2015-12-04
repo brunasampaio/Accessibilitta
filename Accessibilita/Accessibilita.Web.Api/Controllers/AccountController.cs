@@ -15,13 +15,5 @@ namespace Accessibilita.Web.Api.Controllers
         {
             _accountService = new AccountService();
         }
-
-        [HttpGet]
-        [Authorize]
-        public Account[] Teste()
-        {
-            var teste = _accountService.GetAll();
-            return teste.ToArray();
-        }
     }
 }

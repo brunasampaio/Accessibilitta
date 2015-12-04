@@ -28,6 +28,8 @@ namespace Accessibilita.Data.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+            
             context.RateTypes.Add(new RateType() { Name = "Orientação Espacial" });
             context.RateTypes.Add(new RateType() { Name = "Comunicação" });
             context.RateTypes.Add(new RateType() { Name = "Deslocamento" });

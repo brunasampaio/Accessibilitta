@@ -13,6 +13,7 @@ using Accessibilita.Web.Api.Models;
 using Accessibilita.Web.Api.Controllers.Base;
 using FourSquare.SharpSquare.Core;
 using FourSquare.SharpSquare.Entities;
+using Accessibilita.Data.Entities.Enumerators;
 
 namespace Accessibilita.Web.Api.Controllers
 {
@@ -25,42 +26,36 @@ namespace Accessibilita.Web.Api.Controllers
         {
             _placeService = new PlaceService();
             _FSClient = new SharpSquare(ConfigurationManager.AppSettings["FourSquareClientId"], ConfigurationManager.AppSettings["FourSquareClientSecret"]);
-        }
-
-        [HttpPost]
-        public Result<bool> RatePlace(int placeId)
-        {
-            return this.GetResult(true);
-        }
+        }        
 
         [HttpGet]
-        public Result<Rate[]> GetRatingPlace(int id)
-        {            
-            Place place = _placeService.GetById(id);
-            return this.GetResult(place.Rates.ToArray());
-        }
-
-        [HttpGet]
+        [Authorize]
         public Result<Place[]> SearchPlace(string lat, string lng, string query)
         {
             List<Place> result = new List<Place>();
-            List<Venue> apiResult = _FSClient.SearchVenues(new Dictionary<string, string>() {
-                { "ll", string.Format("{0},{1}", lat, lng) },
-                { "query", query}
-            });
+            List<Venue> apiResult = _FSClient.SearchVenues(new Dictionary<string, string>() { { "ll", string.Format("{0},{1}", lat, lng) }, { "query", query } });
 
             foreach (var venue in apiResult)
             {
-                result.Add(new Place()
-                {
-                    Name = venue.name,
-                    Description = venue.description,
-                    Latitude = venue.location.lat.ToString(),
-                    Longitude = venue.location.lng.ToString()
-                });
+                result.Add(this.ConvertPlace(venue));
             }
 
             return this.GetResult(result.ToArray());
+        }
+
+        private Place ConvertPlace(Venue venue)
+        {
+            Place newPlace = new Place()
+            {
+                ExternalId = venue.id,
+                Name = venue.name,
+                Description = venue.description,
+                Latitude = venue.location.lat.ToString(),
+                Longitude = venue.location.lng.ToString(),
+                SourceType = SourceType.FourSquare
+            };
+            _placeService.InsertIfNotExist(newPlace);
+            return newPlace;
         }
     }
 }

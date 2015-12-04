@@ -30,7 +30,7 @@ namespace Accessibilita.Web.Api
                 AllowInsecureHttp = true,
                 TokenEndpointPath = new PathString("/Sign"),
                 AccessTokenExpireTimeSpan = TimeSpan.FromDays(1),
-                Provider = new AuthorizationServerProvider()                 
+                Provider = new AuthorizationServerProvider()
             };
             // Token Generation
                         

@@ -10,6 +10,8 @@ namespace Accessibilita.Web.Api.Controllers.Base
 {
     public class BaseController : ApiController
     {
+        protected const int ADMIN_CONST_ID = 1;
+
         public Result<T> GetResult<T>(T data, bool hasError = false, string message = "")
         {
             return new Result<T>(data, hasError, message);
