@@ -7,5 +7,6 @@ namespace Accessibilita.Service.Interfaces
     public interface IPlaceService : IService<Place>, IDisposable
     {
         void InsertIfNotExist(Place place);
+        Place[] GetTopAvailabilited(int limit);
     }
 }

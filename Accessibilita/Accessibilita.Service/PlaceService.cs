@@ -16,6 +16,11 @@ namespace Accessibilita.Service
             _repository = new PlaceRepository(_context);
         }
 
+        public Place[] GetTopAvailabilited(int limit)
+        {
+            return _repository.GetAll().OrderByDescending(p => p.AverageRating).Take(limit).ToArray();
+        }
+
         public void InsertIfNotExist(Place place)
         {
             Place exist = _repository.Get(p => p.ExternalId == place.ExternalId && p.SourceType == SourceType.FourSquare).SingleOrDefault();
@@ -26,7 +31,8 @@ namespace Accessibilita.Service
             }
             else
             {
-                place.Id = exist.Id;
+                place.PlaceID = exist.PlaceID;
+                place.AverageRating = exist.AverageRating;
             }
         }
     }

@@ -23,7 +23,7 @@ namespace Accessibilita.Web.Api.Controllers
 
         [Authorize]
         [HttpGet]        
-        public Result<RateType[]> GetRateTypes()
+        public Result<RateType[]> GetAll()
         {
             return this.GetResult(_service.GetAll().ToArray());
         }

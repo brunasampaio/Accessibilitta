@@ -10,13 +10,14 @@ namespace Accessibilita.Data.Entities
 {
     public class Place
     {
-        public int Id { get; set; }
+        public int PlaceID { get; set; }
         public string ExternalId { get; set; }
         public SourceType SourceType { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public string Latitude { get; set; }
         public string Longitude { get; set; }
+        public double AverageRating { get; set; }
         public List<Rate> Rates { get; set; }
     }
 }

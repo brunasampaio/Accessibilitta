@@ -15,7 +15,7 @@ namespace Accessibilita.Service.Base
 
         public Service()
         {
-            _context = new AccessibilitaContext();
+                _context = new AccessibilitaContext();
             _repository = new Repository<TEntity>(_context);
         }
 

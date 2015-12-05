@@ -10,5 +10,6 @@ namespace Accessibilita.Data.Repositories.Interfaces
 {
     public interface IRateRepository : IRepository<Rate>, IDisposable
     {
+        
     }
 }

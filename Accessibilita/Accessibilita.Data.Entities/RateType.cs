@@ -8,7 +8,7 @@ namespace Accessibilita.Data.Entities
 {
     public class RateType
     {
-        public int Id { get; set; }
+        public int RateTypeID { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
     }

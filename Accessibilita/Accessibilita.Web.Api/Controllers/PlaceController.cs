@@ -26,7 +26,12 @@ namespace Accessibilita.Web.Api.Controllers
         {
             _placeService = new PlaceService();
             _FSClient = new SharpSquare(ConfigurationManager.AppSettings["FourSquareClientId"], ConfigurationManager.AppSettings["FourSquareClientSecret"]);
-        }        
+        }
+
+        public Result<Place[]> GetTopAvailabilited(int limit)
+        {
+            return this.GetResult(_placeService.GetTopAvailabilited(limit));
+        }
 
         [HttpGet]
         [Authorize]
@@ -34,7 +39,7 @@ namespace Accessibilita.Web.Api.Controllers
         {
             List<Place> result = new List<Place>();
             List<Venue> apiResult = _FSClient.SearchVenues(new Dictionary<string, string>() { { "ll", string.Format("{0},{1}", lat, lng) }, { "query", query } });
-
+            
             foreach (var venue in apiResult)
             {
                 result.Add(this.ConvertPlace(venue));

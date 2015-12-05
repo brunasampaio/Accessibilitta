@@ -24,5 +24,34 @@ namespace Accessibilita.Service
         {
             return _repository.Get(a => a.Email == userName && a.Password == password).FirstOrDefault();
         }
+
+        public bool UpdateAccount(int id, string name, string lastName, string email, string phone)
+        {
+            Account account = _repository.GetById(id);
+            if (account != null)
+            {
+                account.Name = name;
+                account.LastName = lastName;
+                account.Email = email;
+                account.Phone = phone;
+                this.Update(account);
+                return true;
+            }
+            return false;
+        }
+
+        public bool Register(string name, string lastName, string email, string phone, string password)
+        {
+            Account newUser = new Account()
+            {
+                Name = name,
+                LastName = lastName,
+                Email = email,
+                Phone = phone,
+                Password = password
+            };
+            this.Insert(newUser);
+            return newUser.AccountID > 0;
+        }
     }
 }

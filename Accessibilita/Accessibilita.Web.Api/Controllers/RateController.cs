@@ -25,7 +25,7 @@ namespace Accessibilita.Web.Api.Controllers
 
         [HttpGet]
         [Authorize]
-        public Result<Rate[]> GetRates(int placeId)
+        public Result<object[]> GetRatesByPlace(int placeId)
         {
 
             return this.GetResult(_rateService.RatesByPlace(placeId));
@@ -35,20 +35,7 @@ namespace Accessibilita.Web.Api.Controllers
         [Authorize]
         public Result<bool> RatePlace(int placeId, int rateTypeId, int rating)
         {
-            Account user = _accountService.GetById(ADMIN_CONST_ID);
-            Place place = _placeService.GetById(placeId);
-            RateType rateType = _rateTypeService.GetById(rateTypeId);
-
-            Rate newRate = new Rate
-            {
-                Rating = rating,
-                Place = place,
-                User = user,
-                Type = rateType
-            };
-            _rateService.Insert(newRate);
-
-            return this.GetResult(newRate.Id > 0);
+            return this.GetResult(_rateService.RatePlace(ADMIN_CONST_ID, placeId, rateTypeId, rating));
         }
     }
 }

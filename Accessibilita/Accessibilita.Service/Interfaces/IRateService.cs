@@ -10,6 +10,7 @@ namespace Accessibilita.Service.Interfaces
 {
     public interface IRateService : IService<Rate>, IDisposable
     {
-        Rate[] RatesByPlace(int placeId);
+        object[] RatesByPlace(int placeId);
+        bool RatePlace(int accountId, int placeId, int rateTypeId, int rating);
     }
 }

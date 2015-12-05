@@ -8,10 +8,10 @@ namespace Accessibilita.Data.Entities
 {
     public class Rate
     {
-        public int Id { get; set; }
+        public int RateID { get; set; }
         public int Rating { get; set; }
-        public Account User { get; set; }
-        public Place Place { get; set; }
-        public RateType Type { get; set; }
+        public int AccountID { get; set; }
+        public int PlaceID { get; set; }
+        public int RateTypeID { get; set; }
     }
 }
