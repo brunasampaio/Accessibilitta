@@ -218,3 +218,10 @@ $RECYCLE.BIN/
 # =========================
 # Solution detritus
 # =========================
+
+# =========================
+# Ionic Project
+# =========================
+node_modules/
+platforms/
+plugins/
