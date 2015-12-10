@@ -1,20 +1,23 @@
 <ion-view title="Login">
     <ion-content padding="'true'" class="has-header">
-        <img src="img/9pdEXYiCRlCJlPPL7wgM_logo.png" width="50%" height="auto" style="width: 50%; height: auto;">
-        <form class="list">
+        <div class="logo-top">
+            <img src="img/9pdEXYiCRlCJlPPL7wgM_logo.png">
+        </div>
+        <form class="list" ng-submit="doLogin()">
             <ion-list>
                 <label class="item item-input" name="txtEmail">
                     <span class="input-label">Email</span>
-                    <input type="text" placeholder="Digite seu e-mail">
+                    <input type="text" placeholder="Digite seu e-mail" ng-model="loginData.userName">
                 </label>
                 <label class="item item-input" name="txtPassword">
                     <span class="input-label">Senha</span>
-                    <input type="password" placeholder="Digite sua senha">
+                    <input type="password" placeholder="Digite sua senha" ng-model="loginData.password">
                 </label>
             </ion-list>
             <div class="spacer" style="height: 40px;"></div>
+            <button class="button button-positive button-block" type="submit">Entrar</button>
         </form>
-        <a href="#" onclick="window.open('/signup', '_system', 'location=yes'); return false;" class="button button-positive button-block ">Entrar</a>
+        <!--<a href="#" onclick="" class="button button-positive button-block ">Entrar</a>-->
         <a href="#/signup" class="button button-positive button-clear button-block ">ou Cadastre-se</a>
     </ion-content>
 </ion-view>
