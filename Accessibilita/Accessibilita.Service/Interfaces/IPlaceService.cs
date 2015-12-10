@@ -8,5 +8,6 @@ namespace Accessibilita.Service.Interfaces
     {
         void InsertIfNotExist(Place place);
         Place[] GetTopAvailabilited(int limit);
+        Place[] GetRatedPlaceByAccount(int accountId);
     }
 }

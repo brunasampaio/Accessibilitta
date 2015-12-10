@@ -21,6 +21,14 @@ namespace Accessibilita.Service
             return _repository.GetAll().Where(p => p.AverageRating > 0).OrderByDescending(p => p.AverageRating).Take(limit).ToArray();
         }
 
+        public Place[] GetRatedPlaceByAccount(int accountId)
+        {
+            return (from p in _context.Places
+                    join r in _context.Rates on p.PlaceID equals r.PlaceID
+                    where r.AccountID == accountId
+                    select p).Distinct().ToArray();
+        }
+
         public void InsertIfNotExist(Place place)
         {
             Place exist = _repository.Get(p => p.ExternalId == place.ExternalId && p.SourceType == SourceType.FourSquare).SingleOrDefault();

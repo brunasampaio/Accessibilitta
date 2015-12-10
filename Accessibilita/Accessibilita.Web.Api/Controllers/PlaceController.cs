@@ -36,6 +36,13 @@ namespace Accessibilita.Web.Api.Controllers
 
         [HttpGet]
         [Authorize]
+        public Result<Place[]> GetRatedPlaceByAccount()
+        {            
+            return this.GetResult(_placeService.GetRatedPlaceByAccount(ADMIN_CONST_ID));
+        }
+
+        [HttpGet]
+        [Authorize]
         public Result<Place[]> SearchPlace(string lat, string lng, string query)
         {
             List<Place> result = new List<Place>();
