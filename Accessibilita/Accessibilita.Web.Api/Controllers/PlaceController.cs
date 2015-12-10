@@ -28,6 +28,7 @@ namespace Accessibilita.Web.Api.Controllers
             _FSClient = new SharpSquare(ConfigurationManager.AppSettings["FourSquareClientId"], ConfigurationManager.AppSettings["FourSquareClientSecret"]);
         }
 
+        [HttpGet]
         public Result<Place[]> GetTopAvailabilited(int limit)
         {
             return this.GetResult(_placeService.GetTopAvailabilited(limit));

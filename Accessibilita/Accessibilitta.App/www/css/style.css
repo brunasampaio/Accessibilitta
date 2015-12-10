@@ -6,3 +6,7 @@
         width: 50%;
         height: auto;
     }
+
+.list-place .item {
+    margin-bottom: 10px;
+}

@@ -1,6 +1,6 @@
 angular.module('app.routes', [])
 
-.config(function ($stateProvider, $urlRouterProvider) {
+.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
 
     // Ionic uses AngularUI Router which uses the concept of states
     // Learn more here: https://github.com/angular-ui/ui-router
@@ -11,15 +11,16 @@ angular.module('app.routes', [])
         .state('menu', {
             url: '/menu',
             abstract: true,
-            templateUrl: 'templates/menu.html'
+            templateUrl: 'templates/menu.html',
+            controller: 'mainMenuCtrl'
         })
 
-      .state('menu.buscarLocal', {
-          url: '/search-place',
+      .state('menu.busca', {
+          url: '/busca',
           views: {
               'menu': {
-                  templateUrl: 'templates/buscarLocal.html',
-                  controller: 'buscarLocalCtrl'
+                  templateUrl: 'templates/menu-busca.html',
+                  controller: 'buscaCtrl'
               }
           }
       })
@@ -58,11 +59,6 @@ angular.module('app.routes', [])
       })
 
 
-
-
-
-
-
       .state('avaliacao', {
           url: '/rating-place',
           templateUrl: 'templates/avaliacao.html',
@@ -70,9 +66,11 @@ angular.module('app.routes', [])
       })
 
 
-    ;
-
+    ;   
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/login');
+
+    //Interceptor
+    $httpProvider.interceptors.push('APIInterceptor');
 
 });

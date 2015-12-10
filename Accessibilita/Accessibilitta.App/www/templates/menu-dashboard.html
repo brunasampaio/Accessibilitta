@@ -1,31 +1,11 @@
 <ion-view title="Locais Avaliados">
     <ion-content padding="'true'" class="has-header">        
         <ion-list>
-            <ion-item class="item-thumbnail-left">
+            <ion-item class="item-thumbnail-left" ng-repeat="place in places">
                 <img>
-                <h2>Title</h2>
-                <p>Item</p>
-            </ion-item>
-            <ion-item class="item-thumbnail-left">
-                <img>
-                <h2>Title</h2>
-                <p>Item</p>
-            </ion-item>
-            <ion-item class="item-thumbnail-left">
-                <img>
-                <h2>Title</h2>
-                <p>Item</p>
-            </ion-item>
-            <ion-item class="item-thumbnail-left">
-                <img>
-                <h2>Title</h2>
-                <p>Item</p>
-            </ion-item>
-            <ion-item class="item-thumbnail-left">
-                <img>
-                <h2>Title</h2>
-                <p>Item</p>
-            </ion-item>
+                <h2>{{place.name}}</h2>
+                <p>{{place.description}}</p>
+            </ion-item>            
         </ion-list>
     </ion-content>
 </ion-view>

@@ -1,0 +1,17 @@
+<ion-view title="Buscar Local">
+    <ion-content padding="'true'" class="has-header">
+        <form class="list" ng-submit="doSearch()">
+            <label class="item item-input" name="txtSearch">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="search" placeholder="Ex: Parque do Ibirapuera" ng-model="formData.query">
+            </label>
+        </form>
+        <ion-list class="list-place">
+            <ion-item class="item item-thumbnail-left" ng-repeat="place in places">
+                <img>
+                <h2>{{place.name}}</h2>
+                <p>{{place.description}}</p>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

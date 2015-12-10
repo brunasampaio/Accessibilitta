@@ -19,6 +19,9 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
         },
         getObject: function (key) {
             return JSON.parse($window.localStorage[key] || '{}');
+        },
+        remove: function(key) {
+            delete $window.localStorage[key];
         }
     }
 })

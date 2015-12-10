@@ -18,7 +18,7 @@ namespace Accessibilita.Service
 
         public Place[] GetTopAvailabilited(int limit)
         {
-            return _repository.GetAll().OrderByDescending(p => p.AverageRating).Take(limit).ToArray();
+            return _repository.GetAll().Where(p => p.AverageRating > 0).OrderByDescending(p => p.AverageRating).Take(limit).ToArray();
         }
 
         public void InsertIfNotExist(Place place)
