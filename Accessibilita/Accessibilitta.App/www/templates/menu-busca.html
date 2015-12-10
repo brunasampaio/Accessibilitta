@@ -7,7 +7,7 @@
             </label>
         </form>
         <ion-list class="list-place">
-            <ion-item class="item item-thumbnail-left" ng-repeat="place in places">
+            <ion-item class="item item-thumbnail-left" ng-repeat="place in places" ng-click="openDetail()">
                 <img>
                 <h2>{{place.name}}</h2>
                 <p>{{place.description}}</p>

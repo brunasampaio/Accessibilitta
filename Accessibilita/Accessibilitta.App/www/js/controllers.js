@@ -4,7 +4,7 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('mainMenuCtrl', function($scope, $state, $localstorage) {
+.controller('mainMenuCtrl', function ($scope, $state, $localstorage) {
     $scope.doLogout = function () {
         $localstorage.remove('token');
         $state.go('login')
@@ -33,7 +33,7 @@ angular.module('app.controllers', [])
     }
 })
 
-.controller('buscaCtrl', function ($scope, $state, PlaceService) {   
+.controller('buscaCtrl', function ($scope, $state, $ionicHistory, PlaceService) {
 
     $scope.doSearch = function () {
         var formData = this.formData;
@@ -44,16 +44,27 @@ angular.module('app.controllers', [])
             PlaceService.searchPlace(formData, function (res) {
                 $scope.places = res.data;
             }, function (res) { console.log(res); });
-        });        
+        });
+    }
+
+    $scope.openDetail = function (place) {
+        $ionicHistory.nextViewOptions({ disableBack: false });
+        $state.go('avaliacao');
     }
 })
 
-.controller('perfilCtrl', function ($scope) {
-
+.controller('perfilCtrl', function ($scope, $state, RateTypeService) {
+    $scope.rateTypes = [];
+    RateTypeService.getRateTypes(function (res) {
+        $scope.rateTypes = res.data;
+    }, function (res) { console.log(res); })
 })
 
-.controller('avaliacaoCtrl', function ($scope) {
-
+.controller('avaliacaoCtrl', function ($scope, $state, RateTypeService) {
+    $scope.rateTypes = [];
+    RateTypeService.getRateTypes(function (res) {
+        $scope.rateTypes = res.data;
+    }, function (res) { console.log(res) });
 })
 
 .controller('dashboardCtrl', function ($scope, $state, PlaceService) {
