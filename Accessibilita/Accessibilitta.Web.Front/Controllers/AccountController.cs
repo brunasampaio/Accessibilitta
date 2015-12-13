@@ -11,12 +11,6 @@ namespace Accessibilitta.Web.Front.Controllers
 {
     public class AccountController : Controller
     {
-        // GET: Account
-        public ActionResult Index()
-        {
-            return View();
-        }
-
         [HttpGet]
         public ActionResult Login()
         {
@@ -36,12 +30,22 @@ namespace Accessibilitta.Web.Front.Controllers
 
                 PlaceService placeService = new PlaceService();
 
-              //  placeService.
+                Place[] places = placeService.GetRatedPlaceByAccount(auth.AccountID);
 
-                return View();
+                return View("~/Views/Account/Dashboard.cshtml", places);
             }
 
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Register(FormCollection formCollection) {
+            AccountService accountService = new AccountService();
+
+            var account = accountService.Register(formCollection["name"], formCollection["lastName"], formCollection["email"], formCollection["phone"], formCollection["password"]);
+
+            return View();
+        }
+
     }
 }

@@ -10,12 +10,6 @@ namespace Accessibilitta.Web.Front.Controllers
 {
     public class PlaceController : Controller
     {
-        // GET: Place
-        public ActionResult Index()
-        {
-            return View();
-        }
-
         public ActionResult Home() {
             Place[] places = GetTopAvailabilited();
             //Place[] places = new Place[0];
