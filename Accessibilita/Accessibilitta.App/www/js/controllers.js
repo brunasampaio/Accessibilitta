@@ -65,6 +65,20 @@ angular.module('app.controllers', [])
     RateTypeService.getRateTypes(function (res) {
         $scope.rateTypes = res.data;
     }, function (res) { console.log(res) });
+
+    $scope.doRate = function () {
+        var placeId = this.place.placeId;
+        var ratePlaceData = {
+            PlaceId: placeId,
+            Rates: []
+        };
+        angular.forEach(this.rateTypes, function (rate) {
+            ratePlaceData.Rates.push({ RateTypeId: rate.rateTypeId, Rating: rate.rating })
+        });
+        RateTypeService.ratePlace(ratePlaceData, function (res) {
+            console.log('true');
+        }, function(res) { console.log(res) })
+    }
 })
 
 .controller('dashboardCtrl', function ($scope, $state, PlaceService) {

@@ -33,9 +33,9 @@ namespace Accessibilita.Web.Api.Controllers
 
         [HttpPost]
         [Authorize]
-        public Result<bool> RatePlace(int placeId, int rateTypeId, int rating)
+        public Result<bool> RatePlace(int placeId, Rate[] rates)
         {
-            return this.GetResult(_rateService.RatePlace(ADMIN_CONST_ID, placeId, rateTypeId, rating));
+            return this.GetResult(_rateService.RatePlace(ADMIN_CONST_ID, placeId, rates));
         }
     }
 }

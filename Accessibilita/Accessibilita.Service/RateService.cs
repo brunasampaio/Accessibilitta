@@ -22,17 +22,24 @@ namespace Accessibilita.Service
             _placeRepository = new PlaceRepository(_context);
         }
 
-        public bool RatePlace(int accountId, int placeId, int rateTypeId, int rating)
+        public bool RatePlace(int accountId, int placeId, Rate[] rates)
         {
+            bool hasError = false;
             Place place = _placeRepository.GetById(placeId);
-            Rate newRate = new Rate
+            foreach (var rate in rates)
             {
-                Rating = rating,
-                PlaceID = placeId,
-                AccountID = accountId,
-                RateTypeID = rateTypeId
-            };
-            this.Insert(newRate);
+                Rate existRate = _repository.Get(r => r.PlaceID == placeId && r.AccountID == accountId && r.RateTypeID == rate.RateTypeID).First();
+                if (existRate != null)
+                {
+                    rate.RateID = existRate.RateID;
+                    this.Update(rate);
+                }
+                else
+                    this.Insert(rate);
+
+                if (hasError == false)
+                    hasError = (rate.RateID == 0);
+            }
 
             if (place != null)
             {
@@ -40,7 +47,8 @@ namespace Accessibilita.Service
                 _placeRepository.Update(place);
                 _placeRepository.Save();
             }
-            return newRate.RateID > 0;
+
+            return !hasError;
         }
 
         public object[] RatesByPlace(int placeId)

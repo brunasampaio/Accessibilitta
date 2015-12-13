@@ -13,6 +13,9 @@ angular.module('app.services', [])
         },
         rateType: {
             getAll: baseUrlApi + '/RateType/GetAll'
+        },
+        rate: {
+            ratePlace: baseUrlApi + '/Rate/RatePlace'
         }
 
     }
@@ -48,6 +51,11 @@ angular.module('app.services', [])
 
     this.searchPlace = function (data, success, error) {
         $http.get(ApiEndpoint.place.searchPlace, { params: data }).success(success).error(error);
+    }
+})
+.service('RatePlaceService', function ($http, ApiEndpoint) {
+    this.ratePlace = function(data, success, error) {
+        $http.post(ApiEndpoint.rate.ratePlace, data).success(success).error(error);
     }
 })
 .service('RateTypeService', function ($http, ApiEndpoint) {

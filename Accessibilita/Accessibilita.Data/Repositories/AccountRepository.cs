@@ -8,10 +8,5 @@ namespace Accessibilita.Data.Repositories
     public class AccountRepository : Repository<Account>, IAccountRepository
     {
         public AccountRepository(AccessibilitaContext context) : base(context) { }
-
-        public void Teste()
-        {
-
-        }
     }
 }

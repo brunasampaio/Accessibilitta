@@ -10,3 +10,12 @@
 .list-place .item {
     margin-bottom: 10px;
 }
+
+.list-rate-type .item {    
+    margin-bottom: 10px;
+    border:none;
+}
+
+.list-rate-type .item strong {
+    padding: 5px 10px;
+}

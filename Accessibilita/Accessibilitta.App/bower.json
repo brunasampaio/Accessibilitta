@@ -1,0 +1,19 @@
+{
+  "name": "Accessibilita.App",
+  "description": "Projeto para o tc",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ionic-rating": "~0.1.0"
+  }
+}

@@ -1,16 +1,12 @@
 <ion-view title="Avaliação">
     <ion-content padding="'true'" class="has-header">
         <h4>{{place.name}}</h4>
-        <div class="list list-rate-type">
-            <div class="item-rate-type" ng-repeat="rateType in rateTypes">
-                <div>
-                    <strong>{{rateType.name}}:</strong>
-                </div>
-                <div class="range range-positive">
-                    <input type="range" value="3" min="0" max="5">
-                </div>
-            </div>
-        </div>
-        <button class="button button-calm button-block " >Avaliar</button>
+        <ion-list class="list-rate-type">
+            <ion-item class="item" ng-repeat="rateType in rateTypes">
+                <strong>{{rateType.name}}:</strong>
+                <rating ng-model="rateType.rating" max="5"></rating>
+            </ion-item>
+        </ion-list>
+        <button ng-click="doRate();" class="button button-calm button-block">Avaliar</button>
     </ion-content>
 </ion-view>
