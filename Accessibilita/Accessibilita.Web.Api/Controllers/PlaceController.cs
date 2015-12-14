@@ -38,7 +38,7 @@ namespace Accessibilita.Web.Api.Controllers
         [Authorize]
         public Result<Place[]> GetRatedPlaceByAccount()
         {            
-            return this.GetResult(_placeService.GetRatedPlaceByAccount(ADMIN_CONST_ID));
+            return this.GetResult(_placeService.GetRatedPlaceByAccount(this.GetAuthenticatedAccountId()));
         }
 
         [HttpGet]

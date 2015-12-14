@@ -40,7 +40,7 @@ namespace Accessibilita.Web.Api.Controllers
             int placeId = jsonData.GetValue("placeId").ToObject<int>();
             Rate[] rates = jsonData.GetValue("rates").ToObject<Rate[]>();
 
-            return this.GetResult(_rateService.RatePlace(ADMIN_CONST_ID, placeId, rates));            
+            return this.GetResult(_rateService.RatePlace(this.GetAuthenticatedAccountId(), placeId, rates));            
         }
     }
 }

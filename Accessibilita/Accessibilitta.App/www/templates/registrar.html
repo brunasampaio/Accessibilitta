@@ -1,24 +1,26 @@
-<ion-view title="Registrar">
+<ion-view title="Registrar" cache-view="false">
     <ion-content padding="'true'" class="has-header">
-        <img src="img/osaxOjOQYixwF9IQFIKQ_logo.png" width="50%" height="auto" style="width: 50%; height: auto;">
-        <form class="list">
+        <div class="logo-top">
+            <img src="img/logo.png">
+        </div>
+        <form class="list" ng-submit="doRegister()">
             <label class="item item-input" name="txtName">
                 <span class="input-label">Nome</span>
-                <input type="text" placeholder="Digite seu nome">
+                <input type="text" placeholder="Digite seu nome" ng-model="account.name">
             </label>
             <label class="item item-input" name="txtLastName">
                 <span class="input-label">Sobrenome</span>
-                <input type="text" placeholder="Digite seu sobrenome">
+                <input type="text" placeholder="Digite seu sobrenome" ng-model="account.lastName">
             </label>
             <label class="item item-input" name="txtEmail">
                 <span class="input-label">Email</span>
-                <input type="email" placeholder="Digite seu e-mail">
+                <input type="email" placeholder="Digite seu e-mail" ng-model="account.email">
             </label>
             <label class="item item-input" name="txtPassword">
                 <span class="input-label">Senha</span>
-                <input type="password" placeholder="Digite sua senha">
-            </label>            
-            <button class="button button-calm button-block ">Cadastrar</button>
+                <input type="password" placeholder="Digite sua senha" ng-model="account.password">
+            </label>
+            <button class="button button-positive button-block  ">Cadastrar</button>
         </form>
     </ion-content>
 </ion-view>

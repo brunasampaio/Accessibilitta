@@ -15,7 +15,7 @@ namespace Accessibilita.Web.Api.Security
     {
         public override Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
         {
-            
+
             context.Validated();
             return Task.FromResult<object>(null);
         }
@@ -29,17 +29,16 @@ namespace Accessibilita.Web.Api.Security
                 Account user = service.Authenticate(context.UserName, context.Password);
                 if (user != null)
                 {
-                    
+
 
                     var identity = new ClaimsIdentity(context.Options.AuthenticationType);
-                    identity.AddClaim(new Claim("sub", context.UserName));
-                    identity.AddClaim(new Claim("role", "user"));
+                    identity.AddClaim(new Claim("AccountID", user.AccountID.ToString()));
                     context.Validated(identity);
                     return Task.FromResult<object>(null);
                 }
                 else
                 {
-                    context.SetError("invalid_grant", "The user name or password is incorrect.");
+                    context.SetError("invalid_grant", "Usuário ou senha são válidos!");
                     return Task.FromResult<object>(null);
                 }
             }

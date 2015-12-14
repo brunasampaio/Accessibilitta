@@ -5,7 +5,10 @@ angular.module('app.services', [])
     var baseUrlApi = root + '/api';
     return {
         account: {
-            sign: root + '/Sign'
+            sign: root + '/Sign',
+            update: baseUrlApi + '/Account/Update',
+            register: baseUrlApi + '/Account/Register',
+            info: baseUrlApi + '/Account/GetInfo'
         },
         place: {
             getTopAvailabilited: baseUrlApi + '/Place/GetTopAvailabilited',
@@ -42,6 +45,18 @@ angular.module('app.services', [])
         if (!data.grant_type)
             data.grant_type = 'password';
         $http.post(ApiEndpoint.account.sign, $httpParamSerializer(data), { headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' } }).success(success).error(error);
+    }
+
+    this.update = function(data, success, error) {
+        $http.post(ApiEndpoint.account.update, data).success(success).error(error);
+    }
+
+    this.register = function (data, success, error) {
+        $http.post(ApiEndpoint.account.register, data).success(success).error(error);
+    }
+
+    this.getInfo = function(success, error) {
+        $http.get(ApiEndpoint.account.info).success(success).error(error);
     }
 })
 .service('PlaceService', function ($http, ApiEndpoint) {

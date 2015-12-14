@@ -1,7 +1,24 @@
 angular.module('app.controllers', [])
 
-.controller('registrarCtrl', function ($scope) {
-
+.controller('registrarCtrl', function ($scope, $ionicHistory, $ionicPopup, AccountService) {
+    $scope.account = {};
+    $scope.doRegister = function () {
+        AccountService.register($scope.account, function (res) {
+            if (res.hasError) {
+                $ionicPopup.alert({
+                    title: 'Erro',
+                    template: res.errorMessage
+                });
+            }
+            else {
+                $ionicPopup.alert({
+                    title: 'Registrar Conta',
+                    template: 'Conta registrada com sucesso!'
+                });
+                $ionicHistory.goBack();
+            }
+        }, function (res) { console.log(res) })
+    }
 })
 
 .controller('mainMenuCtrl', function ($scope, $state, $localstorage) {
@@ -11,7 +28,7 @@ angular.module('app.controllers', [])
     }
 })
 
-.controller('loginCtrl', function ($scope, $state, $location, $localstorage, AccountService) {
+.controller('loginCtrl', function ($scope, $state, $location, $localstorage, $ionicPopup, AccountService) {
     $scope.loginData = {
         userName: '',
         password: ''
@@ -19,14 +36,17 @@ angular.module('app.controllers', [])
 
     $scope.doLogin = function () {
         var onSuccess = function (res) {
-            if (res.access_token) {                
+            if (res.access_token) {
                 res.token_type = res.token_type.toUpperCase();
                 $localstorage.setObject('token', res);
                 $state.go('menu.dashboard');
             }
         }
         var onError = function (res) {
-            console.log(res);
+            $ionicPopup.alert({
+                title: 'Erro',
+                template: res.error_description
+            })
         }
         AccountService.login(this.loginData, onSuccess, onError);
     }
@@ -47,11 +67,23 @@ angular.module('app.controllers', [])
     }
 })
 
-.controller('perfilCtrl', function ($scope, $state, RateTypeService) {
-    $scope.rateTypes = [];
-    RateTypeService.getRateTypes(function (res) {
-        $scope.rateTypes = res.data;
-    }, function (res) { console.log(res); })
+.controller('perfilCtrl', function ($scope, $state, $ionicPopup, AccountService) {
+    $scope.account = {};
+    $scope.doUpdateAccount = function () {
+        AccountService.update($scope.account, function (res) {
+            $ionicPopup.alert({
+                title: 'Atualizar Dados',
+                template: 'Dados atulizados com sucesso!'
+            });
+            $scope.getInfo();
+        }, function (res) { console.log(res); })
+    }
+    $scope.getInfo = function () {
+        AccountService.getInfo(function (res) {
+            $scope.account = res.data;
+        }, function (res) { console.log(res) });
+    }
+    $scope.getInfo();
 })
 
 .controller('avaliacaoCtrl', function ($scope, $state, $stateParams, RateTypeService, RateService) {
