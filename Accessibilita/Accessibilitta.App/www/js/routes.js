@@ -15,68 +15,77 @@ angular.module('app.routes', [])
             controller: 'mainMenuCtrl'
         })
 
-      .state('menu.busca', {
-          url: '/busca',
-          views: {
-              'menu': {
-                  templateUrl: 'templates/menu-busca.html',
-                  controller: 'buscaCtrl'
-              }
-          }
-      })
+        .state('menu.busca', {
+            url: '/busca',
+            views: {
+                'menu': {
+                    templateUrl: 'templates/menu-busca.html',
+                    controller: 'buscaCtrl'
+                }
+            }
+        })
 
-      .state('menu.chekin', {
-          url: '/checkin',
-          views: {
-              'menu': {
-                  templateUrl: 'templates/menu-checkin.html',
-                  controller: 'checkinCtrl'
-              }
-          }
-      })
+        .state('menu.chekin', {
+            url: '/checkin',
+            views: {
+                'menu': {
+                    templateUrl: 'templates/menu-checkin.html',
+                    controller: 'checkinCtrl'
+                }
+            }
+        })
+        .state('menu.historico', {
+            url: '/historico',
+            views: {
+                'menu': {
+                    templateUrl: 'templates/menu-historico.html',
+                    controller: 'historicoCtrl'
+                }
+            }
+        })
 
-      .state('menu.dashboard', {
-          url: '/dashboard',
-          views: {
-              'menu': {
-                  templateUrl: 'templates/menu-dashboard.html',
-                  controller: 'dashboardCtrl'
-              }
-          }
-      })
-
-
-      .state('menu.perfil', {
-          url: '/perfil',
-          views: {
-              'menu': {
-                  templateUrl: 'templates/menu-perfil.html',
-                  controller: 'perfilCtrl'
-              }
-          }
-      })
-
-      .state('registrar', {
-          url: '/signup',
-          templateUrl: 'templates/registrar.html',
-          controller: 'registrarCtrl'
-      })
-
-      .state('login', {
-          url: '/login',
-          templateUrl: 'templates/login.html',
-          controller: 'loginCtrl'
-      })
+        .state('menu.dashboard', {
+            url: '/dashboard',
+            views: {
+                'menu': {
+                    templateUrl: 'templates/menu-dashboard.html',
+                    controller: 'dashboardCtrl'
+                }
+            }
+        })
 
 
-      .state('avaliacao', {
-          url: '/avaliacao/:place',
-          templateUrl: 'templates/avaliacao.html',
-          controller: 'avaliacaoCtrl'
-      })
+        .state('menu.perfil', {
+            url: '/perfil',
+            views: {
+                'menu': {
+                    templateUrl: 'templates/menu-perfil.html',
+                    controller: 'perfilCtrl'
+                }
+            }
+        })
+
+        .state('registrar', {
+            url: '/signup',
+            templateUrl: 'templates/registrar.html',
+            controller: 'registrarCtrl'
+        })
+
+        .state('login', {
+            url: '/login',
+            templateUrl: 'templates/login.html',
+            controller: 'loginCtrl'
+        })
 
 
-    ;   
+        .state('avaliacao', {
+            url: '/avaliacao/:place',
+            templateUrl: 'templates/avaliacao.html',
+            controller: 'avaliacaoCtrl'
+        })
+
+
+    ;
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/login');
 

@@ -12,6 +12,7 @@ angular.module('app.services', [])
         },
         place: {
             getTopAvailabilited: baseUrlApi + '/Place/GetTopAvailabilited',
+            getRatedPlaceByAccount: baseUrlApi + '/Place/GetRatedPlaceByAccount',
             searchPlace: baseUrlApi + '/Place/SearchPlace'
         },
         rateType: {
@@ -47,7 +48,7 @@ angular.module('app.services', [])
         $http.post(ApiEndpoint.account.sign, $httpParamSerializer(data), { headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' } }).success(success).error(error);
     }
 
-    this.update = function(data, success, error) {
+    this.update = function (data, success, error) {
         $http.post(ApiEndpoint.account.update, data).success(success).error(error);
     }
 
@@ -55,7 +56,7 @@ angular.module('app.services', [])
         $http.post(ApiEndpoint.account.register, data).success(success).error(error);
     }
 
-    this.getInfo = function(success, error) {
+    this.getInfo = function (success, error) {
         $http.get(ApiEndpoint.account.info).success(success).error(error);
     }
 })
@@ -66,6 +67,10 @@ angular.module('app.services', [])
 
     this.searchPlace = function (data, success, error) {
         $http.get(ApiEndpoint.place.searchPlace, { params: data }).success(success).error(error);
+    }
+
+    this.getRatedPlaceByAccount = function (success, error) {
+        $http.get(ApiEndpoint.place.getRatedPlaceByAccount).success(success).error(error);
     }
 })
 .service('RateService', function ($http, $httpParamSerializer, ApiEndpoint) {

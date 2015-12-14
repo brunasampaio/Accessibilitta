@@ -67,8 +67,8 @@ angular.module('app.controllers', [])
     }
 })
 
-.controller('checkinCtrl', function($scope, PlaceService) {
-    $scope.getPlaces = function () {        
+.controller('checkinCtrl', function ($scope, PlaceService) {
+    $scope.getPlaces = function () {
         navigator.geolocation.getCurrentPosition(function (position) {
             var formData = {};
             formData.query = '';
@@ -81,6 +81,16 @@ angular.module('app.controllers', [])
         });
     }
     $scope.getPlaces();
+})
+
+.controller('historicoCtrl', function ($scope, PlaceService) {
+    $scope.places = [];
+    $scope.getListData = function () {
+        PlaceService.getRatedPlaceByAccount(function (res) {
+            $scope.places = res.data;
+        }, function (res) { console.log(res); });
+    }
+    $scope.getListData();
 })
 
 .controller('perfilCtrl', function ($scope, $state, $ionicPopup, AccountService) {
