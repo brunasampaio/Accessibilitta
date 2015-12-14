@@ -6,11 +6,13 @@
                 <input type="search" placeholder="Ex: Parque do Ibirapuera" ng-model="formData.query">
             </label>
         </form>
+        
         <ion-list class="list-place">
-            <ion-item class="item item-thumbnail-left" ng-repeat="place in places" ng-click="openDetail()">
-                <img>
+            <ion-item class="item item-thumbnail-left" ng-repeat="place in places" href="#/avaliacao/{{place}}">
+                <img src="../img/icon-place-default.png" />
                 <h2>{{place.name}}</h2>
                 <p>{{place.description}}</p>
+                <rating readonly="true" ng-model="place.averageRating" max="5"></rating>
             </ion-item>
         </ion-list>
     </ion-content>

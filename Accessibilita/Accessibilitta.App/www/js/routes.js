@@ -60,7 +60,7 @@ angular.module('app.routes', [])
 
 
       .state('avaliacao', {
-          url: '/avaliacao',
+          url: '/avaliacao/:place',
           templateUrl: 'templates/avaliacao.html',
           controller: 'avaliacaoCtrl'
       })

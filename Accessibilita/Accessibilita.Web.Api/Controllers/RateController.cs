@@ -1,9 +1,11 @@
-﻿using System.Web.Http;
+﻿using System.Net.Http.Formatting;
+using System.Web.Http;
 using Accessibilita.Data.Entities;
 using Accessibilita.Service;
 using Accessibilita.Service.Interfaces;
 using Accessibilita.Web.Api.Controllers.Base;
 using Accessibilita.Web.Api.Models;
+using Newtonsoft.Json.Linq;
 
 namespace Accessibilita.Web.Api.Controllers
 {
@@ -33,9 +35,12 @@ namespace Accessibilita.Web.Api.Controllers
 
         [HttpPost]
         [Authorize]
-        public Result<bool> RatePlace(int placeId, Rate[] rates)
+        public Result<bool> RatePlace(JObject jsonData)
         {
-            return this.GetResult(_rateService.RatePlace(ADMIN_CONST_ID, placeId, rates));
+            int placeId = jsonData.GetValue("placeId").ToObject<int>();
+            Rate[] rates = jsonData.GetValue("rates").ToObject<Rate[]>();
+
+            return this.GetResult(_rateService.RatePlace(ADMIN_CONST_ID, placeId, rates));            
         }
     }
 }

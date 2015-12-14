@@ -25,27 +25,37 @@ namespace Accessibilita.Service
         public bool RatePlace(int accountId, int placeId, Rate[] rates)
         {
             bool hasError = false;
-            Place place = _placeRepository.GetById(placeId);
-            foreach (var rate in rates)
+            if (rates == null)
             {
-                Rate existRate = _repository.Get(r => r.PlaceID == placeId && r.AccountID == accountId && r.RateTypeID == rate.RateTypeID).First();
-                if (existRate != null)
-                {
-                    rate.RateID = existRate.RateID;
-                    this.Update(rate);
-                }
-                else
-                    this.Insert(rate);
-
-                if (hasError == false)
-                    hasError = (rate.RateID == 0);
+                hasError = true;
             }
-
-            if (place != null)
+            else
             {
-                place.AverageRating = this._repository.Get(r => r.PlaceID == placeId).Average(r => r.Rating);
-                _placeRepository.Update(place);
-                _placeRepository.Save();
+                Place place = _placeRepository.GetById(placeId);
+                foreach (var rate in rates)
+                {
+                    rate.AccountID = accountId;
+                    rate.PlaceID = placeId;
+
+                    Rate existRate = _repository.Get(r => r.PlaceID == placeId && r.AccountID == accountId && r.RateTypeID == rate.RateTypeID).FirstOrDefault();
+                    if (existRate != null)
+                    {
+                        existRate.Rating = rate.Rating;
+                        this.Update(existRate);
+                    }
+                    else
+                        this.Insert(rate);
+
+                    if (hasError == false)
+                        hasError = (existRate == null && rate.RateID == 0);
+                }
+
+                if (place != null)
+                {
+                    place.AverageRating = this._repository.Get(r => r.PlaceID == placeId).Average(r => r.Rating);
+                    _placeRepository.Update(place);
+                    _placeRepository.Save();
+                }
             }
 
             return !hasError;

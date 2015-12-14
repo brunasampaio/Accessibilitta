@@ -11,7 +11,7 @@ angular.module('app.controllers', [])
     }
 })
 
-.controller('loginCtrl', function ($scope, $state, $location, $localstorage, $ionicHistory, AccountService) {
+.controller('loginCtrl', function ($scope, $state, $location, $localstorage, AccountService) {
     $scope.loginData = {
         userName: '',
         password: ''
@@ -19,8 +19,7 @@ angular.module('app.controllers', [])
 
     $scope.doLogin = function () {
         var onSuccess = function (res) {
-            if (res.access_token) {
-                $ionicHistory.nextViewOptions({ disableBack: true });
+            if (res.access_token) {                
                 res.token_type = res.token_type.toUpperCase();
                 $localstorage.setObject('token', res);
                 $state.go('menu.dashboard');
@@ -33,7 +32,7 @@ angular.module('app.controllers', [])
     }
 })
 
-.controller('buscaCtrl', function ($scope, $state, $ionicHistory, PlaceService) {
+.controller('buscaCtrl', function ($scope, $state, PlaceService) {
 
     $scope.doSearch = function () {
         var formData = this.formData;
@@ -46,11 +45,6 @@ angular.module('app.controllers', [])
             }, function (res) { console.log(res); });
         });
     }
-
-    $scope.openDetail = function (place) {
-        $ionicHistory.nextViewOptions({ disableBack: false });
-        $state.go('avaliacao');
-    }
 })
 
 .controller('perfilCtrl', function ($scope, $state, RateTypeService) {
@@ -60,31 +54,36 @@ angular.module('app.controllers', [])
     }, function (res) { console.log(res); })
 })
 
-.controller('avaliacaoCtrl', function ($scope, $state, RateTypeService) {
+.controller('avaliacaoCtrl', function ($scope, $state, $stateParams, RateTypeService, RateService) {
+    $scope.place = JSON.parse($stateParams.place);
     $scope.rateTypes = [];
     RateTypeService.getRateTypes(function (res) {
         $scope.rateTypes = res.data;
     }, function (res) { console.log(res) });
 
     $scope.doRate = function () {
-        var placeId = this.place.placeId;
         var ratePlaceData = {
-            PlaceId: placeId,
-            Rates: []
+            placeId: this.place.placeID,
+            rates: []
         };
         angular.forEach(this.rateTypes, function (rate) {
-            ratePlaceData.Rates.push({ RateTypeId: rate.rateTypeId, Rating: rate.rating })
+            ratePlaceData.rates.push({ RateTypeID: rate.rateTypeID, Rating: rate.rating })
         });
-        RateTypeService.ratePlace(ratePlaceData, function (res) {
-            console.log('true');
-        }, function(res) { console.log(res) })
+        RateService.ratePlace(ratePlaceData, function (res) {
+            $state.go('menu.dashboard');
+        }, function (res) { console.log(res) })
     }
 })
 
 .controller('dashboardCtrl', function ($scope, $state, PlaceService) {
     $scope.places = [];
 
-    PlaceService.getTopAvailabilited(20, function (res) {
-        $scope.places = res.data;
-    }, function (res) { console.log(res); });
+    $scope.doListData = function () {
+        PlaceService.getTopAvailabilited(20, function (res) {
+            $scope.places = res.data;
+            $scope.$broadcast('scroll.refreshComplete');
+        }, function (res) { console.log(res); });
+    }
+
+    $scope.doListData();
 })

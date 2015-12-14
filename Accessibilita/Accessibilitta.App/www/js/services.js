@@ -53,8 +53,8 @@ angular.module('app.services', [])
         $http.get(ApiEndpoint.place.searchPlace, { params: data }).success(success).error(error);
     }
 })
-.service('RatePlaceService', function ($http, ApiEndpoint) {
-    this.ratePlace = function(data, success, error) {
+.service('RateService', function ($http, $httpParamSerializer, ApiEndpoint) {
+    this.ratePlace = function (data, success, error) {
         $http.post(ApiEndpoint.rate.ratePlace, data).success(success).error(error);
     }
 })
