@@ -25,6 +25,16 @@ angular.module('app.routes', [])
           }
       })
 
+      .state('menu.chekin', {
+          url: '/checkin',
+          views: {
+              'menu': {
+                  templateUrl: 'templates/menu-checkin.html',
+                  controller: 'checkinCtrl'
+              }
+          }
+      })
+
       .state('menu.dashboard', {
           url: '/dashboard',
           views: {

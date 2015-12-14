@@ -14,11 +14,13 @@
         </ion-header-bar>
         <ion-content padding="false" class="side-menu-left has-header">
             <ion-list>
-                <ion-item href="#/menu/dashboard" menu-close="">Dashboard</ion-item>
-                <ion-item href="#/menu/busca" menu-close="">Buscar</ion-item>
-                <ion-item href="#/menu/perfil" menu-close="">Perfil</ion-item>
-                <ion-item>Configurações</ion-item>
-                <ion-item ng-click="doLogout()">Sair</ion-item>
+                <ion-item class="item-icon-left" href="#/menu/dashboard" menu-close=""><i class="icon ion-trophy"></i>Mais Avaliados</ion-item>
+                <ion-item class="item-icon-left" href="#/menu/busca" menu-close=""><i class="icon ion-android-search"></i>Buscar</ion-item>
+                <ion-item class="item-icon-left" href="#/menu/checkin" menu-close=""><i class="icon ion-ios-location"></i>Check-in</ion-item>
+                <ion-item class="item-icon-left" href="#/menu/perfil" menu-close=""><i class="icon ion-android-person"></i>Perfil</ion-item>
+
+                <!--<ion-item>Configurações</ion-item>-->
+                <ion-item class="item-icon-left" ng-click="doLogout()"><i class="icon ion-power"></i>Sair</ion-item>
             </ion-list>
         </ion-content>
     </ion-side-menu>

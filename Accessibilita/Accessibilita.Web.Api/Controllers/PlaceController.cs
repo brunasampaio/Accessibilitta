@@ -37,7 +37,7 @@ namespace Accessibilita.Web.Api.Controllers
         [HttpGet]
         [Authorize]
         public Result<Place[]> GetRatedPlaceByAccount()
-        {            
+        {
             return this.GetResult(_placeService.GetRatedPlaceByAccount(this.GetAuthenticatedAccountId()));
         }
 
@@ -45,9 +45,15 @@ namespace Accessibilita.Web.Api.Controllers
         [Authorize]
         public Result<Place[]> SearchPlace(string lat, string lng, string query)
         {
+            Dictionary<string, string> parameters = new Dictionary<string, string>();
+            if (!string.IsNullOrEmpty(query))
+                parameters.Add("query", query);
+            parameters.Add("ll", string.Format("{0},{1}", lat, lng));
+
+
             List<Place> result = new List<Place>();
-            List<Venue> apiResult = _FSClient.SearchVenues(new Dictionary<string, string>() { { "ll", string.Format("{0},{1}", lat, lng) }, { "query", query } });
-            
+            List<Venue> apiResult = _FSClient.SearchVenues(parameters);
+
             foreach (var venue in apiResult)
             {
                 result.Add(this.ConvertPlace(venue));
