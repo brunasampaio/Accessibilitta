@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using Accessibilita.Data.Entities;
 using Accessibilita.Service;
-using Accessibilita.Service.Interfaces;
 
 namespace Accessibilitta.Web.Front.Controllers
 {
@@ -13,6 +8,12 @@ namespace Accessibilitta.Web.Front.Controllers
     {
         [HttpGet]
         public ActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult Register()
         {
             return View();
         }
@@ -44,7 +45,7 @@ namespace Accessibilitta.Web.Front.Controllers
 
             var account = accountService.Register(formCollection["name"], formCollection["lastName"], formCollection["email"], formCollection["phone"], formCollection["password"]);
 
-            return View();
+            return View("~/Views/Account/Login.cshtml");
         }
 
     }
